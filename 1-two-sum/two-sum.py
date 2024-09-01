@@ -9,6 +9,3 @@ class Solution:
                 s.append(i)
                 s.append(h+i+1)
         return s
-
-            
-        
