@@ -1,22 +1,15 @@
 class Solution:
     def maxProduct(self, nums: List[int]) -> int:
-        # If the list is empty, return 0 (though the input guarantees at least one number)
-        if not nums:
-            return 0
+        max_val = float('-inf')
+        prefix, suffix = 1, 1
 
-        maxp = float('-inf')  # Start with the smallest possible value
+        for i in range(len(nums)):
+            prefix *= nums[i]
+            suffix *= nums[len(nums) - 1 - i]
 
-        # Left-to-right and right-to-left traversal
-        mul_l = mul_r = 1  # Initialize left and right products
-        
-        length = len(nums)
-        for i in range(length):
-            # Left-to-right product
-            mul_l = mul_l * nums[i] if mul_l != 0 else nums[i]
-            # Right-to-left product
-            mul_r = mul_r * nums[length - 1 - i] if mul_r != 0 else nums[length - 1 - i]
+            max_val = max(max_val, suffix, prefix)
 
-            # Track maximum product from both directions
-            maxp = max(maxp, mul_l, mul_r)
+            prefix = 1 if prefix == 0 else prefix
+            suffix = 1 if suffix == 0 else suffix
 
-        return maxp
+        return max_val
