@@ -11,20 +11,15 @@ class Solution:
         if not head or not head.next:
             return False
         
-        
+        #head are always none type , it means there are locations 
         a=head
         b=head.next
-        flag=0
         
         while b and b.next:
             a=a.next
             b=b.next.next 
             if a==b:
-                flag=1
-                break
-        if flag==1:
-            return True
-        if flag==0:
-            return False
+                return True
+        return False
         
         
