@@ -10,10 +10,7 @@ class Solution:
         def depth(root,level):
             if root is None:
                 return level
-            left_depth=depth(root.left,level+1)
-            right_depth=depth(root.right,level+1)
-
-            return max(left_depth,right_depth)
+            return max(depth(root.left,level+1),depth(root.right,level+1))
         
         return depth(root,level)
         
