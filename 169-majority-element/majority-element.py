@@ -12,5 +12,4 @@ class Solution:
                 f[nums[i]]=f[nums[i]]+1
                 if f[nums[i]] > l//2:
                     d=nums[i]
-
         return d
