@@ -12,6 +12,6 @@ class Solution:
             else:
                 i+= 1
         while g:
-            nums.append(0)
-            g.pop(0)
+            nums.append(0)#element
+            g.pop(0)#position
         return nums
