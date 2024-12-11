@@ -4,8 +4,14 @@ class Solution:
         def fibn(n):
             if n in d:
                 return d[n]
-            return fibn(n-1)+fibn(n-2)
+            k=fibn(n-1)
+            d[n-1]=k
+            j=fibn(n-2)
+
+            return k + j
+       
         res=fibn(n)
+        
         return res
             
         
