@@ -14,11 +14,12 @@ class Solution:
             
             if diff in d:
                 count=count+d[diff]
-            
             if prefix_sum not in d:
                 d[prefix_sum]=1
             else:
                 d[prefix_sum]=d[prefix_sum]+1
+            
+            
         return count
         
         
