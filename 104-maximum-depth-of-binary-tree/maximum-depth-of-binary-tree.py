@@ -9,8 +9,10 @@ class Solution:
         level=0
         def depth(root,level):
             if root:
-                return max(depth(root.left,level+1),depth(root.right,level+1))
-            return level
-        
+                l=depth(root.left,level+1)
+                r=depth(root.right,level+1)
+                return max(l,r)
+            else:
+                return level
         return depth(root,level)
         
